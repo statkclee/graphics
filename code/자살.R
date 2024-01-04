@@ -53,7 +53,7 @@ suicide_df |>
     scale_x_date(breaks=seq(dlist[1], tail(dlist,1) + years(1), "5 year"),
                  date_labels="%y",limits=c(dlist[1], tail(dlist,1)+years(5)))+
     geom_text(data=suicide_df %>% dplyr::filter(date==dlist[54]), hjust=0, nudge_x=500) +
-    theme_korean() +
+    theme_minimal(base_family = 'NanumSquare_ac') +
     labs(x="",y="",title="자살자수 국제 비교",
          caption="\n 자료출처: 십만명당 자살자수 OECD 데이터, https://data.oecd.org/healthstat/suicide-rates.htm",
          subtitle="십만명당 자살자수(남녀 총합)") 
@@ -63,16 +63,16 @@ extrafont::loadfonts()
 # https://stackoverflow.com/questions/64762634/r-animating-line-plot-using-gganimate-and-geom-text
 
 suicide_gif <- suicide_df |> 
-  filter(date >= ymd("2010-01-01")) |> 
+  # dplyr::filter(date >= ymd("2010-01-01")) |> 
   ggplot(aes(x=date, y=suicide, group = country, color = country, label=country))+
     geom_point(show.legend = FALSE) +
     geom_line(linewidth = 0.7, aes(group = country)) +
     scale_color_viridis_d() +
-    scale_x_date(limits = as.Date(c("2010-01-01", "2030-12-31")),
+    scale_x_date(limits = as.Date(c("1960-01-01", "2021-12-31")),
                  date_labels="%y") +
-    geom_text(aes(x = date, label = country), 
+    geom_text(aes(x = date, label = country), family = 'NanumSquare_ac',
               nudge_x = -1, hjust = -0.4, show.legend=FALSE, size = 3.5) +  
-    theme_korean() +
+    theme_minimal(base_family = 'NanumSquare_ac') +
     theme(legend.position = "none")+
     labs(x="",
          y="",
@@ -81,8 +81,10 @@ suicide_gif <- suicide_df |>
          subtitle="십만명당 자살자수(남녀 총합)")  +
   transition_reveal(date, keep_last=TRUE)   
 
+suicide_ani <- animate(suicide_gif, duration = 10, 
+                    fps = 10, width = 1400, height = 865, 
+                    renderer = gifski_renderer(), res = 200, type = "cairo")
 
-anim_save(filename = "images/suicide.gif")
-
+anim_save("images/suicide_hr.gif", suicide_ani)
 
 
