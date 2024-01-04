@@ -1,0 +1,14 @@
+{
+  "index.qmd": {
+    "index.html": "863225cd"
+  },
+  "about.qmd": {
+    "about.html": "4765abfa"
+  },
+  "dashboard/01_history.qmd": {
+    "01_history.html": "26cea917"
+  },
+  "news.qmd": {
+    "news.html": "8dee53f2"
+  }
+}

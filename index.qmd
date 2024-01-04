@@ -1,0 +1,18 @@
+---
+title: "개요"
+logo: images/logo.png
+format: dashboard
+editor_options: 
+  chunk_output_type: console
+---
+
+# 제22대 총선일정
+
+![](images/선거일정.jpeg){fig-align="center" width="849"}
+
+
+# 선거일정
+
+
+![](images/timeline_viz.png){fig-align="center" width="849"}
+

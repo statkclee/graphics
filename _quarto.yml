@@ -1,0 +1,43 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "!code/*.R"
+
+lang: ko-KR
+
+
+website:
+  title: "그래픽 2024!"
+  favicon: images/logo.png
+  navbar:
+    left:
+      - href: index.qmd
+        text: "첫화면"
+      - news.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+filters:
+   - lightbox
+lightbox: auto
+
+link-citations: true
+
+knitr:
+  opts_chunk: 
+    eval: false
+    message: false
+    warning: false
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+
