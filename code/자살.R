@@ -82,6 +82,7 @@ suicide_gif <- suicide_df |>
   transition_reveal(date, keep_last=TRUE)   
 
 
-anim_save(suicide_gif, path = "images/suicide.gif")
+anim_save(filename = "images/suicide.gif")
+
 
 

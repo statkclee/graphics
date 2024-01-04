@@ -16,6 +16,7 @@ website:
       - href: index.qmd
         text: "첫화면"
       - news.qmd
+      - demo.qmd      
 
 format:
   html:

@@ -1,0 +1,14 @@
+---
+title: "시연"
+logo: images/logo.png
+format: dashboard
+editor_options: 
+  chunk_output_type: console
+---
+
+# 자살 추세
+
+![](images/suicide_hr.gif)
+
+
+
