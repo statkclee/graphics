@@ -70,7 +70,9 @@ magick::image_write(
 # 3.2. iris ---------------------------------------------------------------
 
 p <- ggplot(iris, aes(x = Petal.Width, y = Petal.Length)) +
-  geom_point()
+  geom_point() +
+  labs(title = "한글") +
+  theme_minimal(base_family = "NanumSquare_ac") 
 
 anim <- p +
   transition_states(Species,
